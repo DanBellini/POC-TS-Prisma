@@ -6,3 +6,5 @@ export type UserEntity = {
 }
 
 export type CreateUserParams = Omit<UserEntity, "id">
+
+export type User = Omit<UserEntity, "password" | "email"> 

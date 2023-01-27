@@ -1,4 +1,5 @@
 import { Request, Response } from "express";
+import httpStatus from "http-status";
 import { CreateUserParams } from "../protocols/users.protocols.js";
 import userServices from "../services/users.services.js";
 
@@ -10,7 +11,10 @@ export async function userPost(req: Request, res: Response) {
 
         return res.status(201).send("New User cadastred!")
     } catch (error) {
-        console.log(error);
-        return res.status(500).send("Error on userpost")
+        if (error.name === "ConflictError") {
+            return res.status(httpStatus.CONFLICT).send(error);
+        }
+    
+        return res.sendStatus(httpStatus.INTERNAL_SERVER_ERROR);
     }
 }

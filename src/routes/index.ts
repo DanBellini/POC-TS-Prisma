@@ -1,2 +1,2 @@
-export * from "./user.router.js";
-export * from "./post.router.js";
+export * from "./users.router.js";
+export * from "./posts.router.js";
