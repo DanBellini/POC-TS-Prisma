@@ -5,7 +5,9 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "dev": "npx nodemon src/app.ts"
+    "dev": "npx nodemon src/app.ts",
+    "dev:migration-generate": "npx prisma migrate dev",
+    "prisma:seed":"npx prisma db seed"
   },
   "prisma": {
     "seed": "ts-node prisma/seed.ts"
