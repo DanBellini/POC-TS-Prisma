@@ -3,8 +3,9 @@ export type UserEntity = {
     name: string
     email: string
     password: string
+    createAt?: Date
 }
 
-export type CreateUserParams = Omit<UserEntity, "id">
+export type CreateUserParams = Omit<UserEntity, "id" | "createAt">
 
 export type User = Omit<UserEntity, "password" | "email"> 

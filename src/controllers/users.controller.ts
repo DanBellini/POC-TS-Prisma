@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
 import httpStatus from "http-status";
 import { CreateUserParams } from "../protocols/users.protocols.js";
-import userServices from "../services/users.services.js";
+import userServices from "../services/users.service.js";
 
 export async function userPost(req: Request, res: Response) {
     const newUser = req.body as CreateUserParams;
