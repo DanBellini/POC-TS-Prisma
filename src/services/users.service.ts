@@ -2,7 +2,6 @@ import conflictError from "../errors/conflict.error.js";
 import { CreateUserParams } from "../protocols/users.protocols.js";
 import userRepositories from "../repositories/users.repository.js";
 
-//async function createNewUser(NewUser: CreateUserParams): Promise<void> {
 async function createNewUser(newUser: CreateUserParams) {
     const {email} = newUser;
 

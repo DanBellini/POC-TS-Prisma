@@ -17,9 +17,18 @@ async function createNewUser(newUser: CreateUserParams) {
     })
 };
 
+async function getUserWithId(id: number) {
+    return prisma.user.findUnique({
+        where: {
+            id:id
+        }
+    })
+}
+
 const userRepositories ={
     createNewUser,
-    getUserWithEmail
+    getUserWithEmail,
+    getUserWithId
 };
 
 export default userRepositories;
