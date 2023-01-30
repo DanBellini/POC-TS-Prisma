@@ -11,7 +11,7 @@ export async function userPost(req: Request, res: Response) {
 
         return res.status(201).send("New User cadastred!")
     } catch (error) {
-        if (error.name === "ConflictError") {
+        if (error.name === "InvalidEmailError") {
             return res.status(httpStatus.CONFLICT).send(error);
         }
     
