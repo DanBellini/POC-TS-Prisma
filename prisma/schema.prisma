@@ -8,24 +8,24 @@ datasource db {
 }
 
 model User {
-  id       Int       @id @default(autoincrement())
+  id       Int        @id @default(autoincrement())
   name     String
-  email    String    @unique
+  email    String     @unique
   password String
-  createAt DateTime? @default(now()) @db.Timestamp(6)
-  Comment  Comment[]
-  Post     Post[]
+  createAt DateTime?  @default(now()) @db.Timestamp(6)
+  comments Comment[]
+  posts    Post[]
 
   @@map("users")
 }
 
 model Post {
-  id          Int       @id @default(autoincrement())
+  id          Int        @id @default(autoincrement())
   description String
-  createAt    DateTime? @default(now()) @db.Timestamp(6)
+  createAt    DateTime?  @default(now()) @db.Timestamp(6)
   userIdPost  Int
-  Comment     Comment[]
-  user        User      @relation(fields: [userIdPost], references: [id])
+  comments    Comment[]
+  users       User      @relation(fields: [userIdPost], references: [id])
 
   @@map("posts")
 }
@@ -36,8 +36,8 @@ model Comment {
   userIdComment Int
   postId        Int
   comment       String
-  post          Post      @relation(fields: [postId], references: [id])
-  user          User      @relation(fields: [userIdComment], references: [id])
+  posts         Post     @relation(fields: [postId], references: [id])
+  users         User     @relation(fields: [userIdComment], references: [id])
 
   @@map("comments")
 }

@@ -3,21 +3,20 @@ import prisma from "../config/database.js";
 async function timeline() {
     return prisma.post.findMany({
         include:{
-            user:{
+            users:{
                 select:{
-                    name: true
+                    name:true
                 }
             },
-            Comment: {
+            comments:{
                 include:{
-                    user:{
+                    users:{
                         select:{
                             name:true
                         }
                     }
                 }
             }
-            
         }
     })
 }
