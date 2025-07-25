@@ -6,7 +6,7 @@ Uma POC para treinamento geral do meu aprendizado até o momento.
 
 Este repositório é uma Prova de Conceito (POC) que explora o uso de **TypeScript** em conjunto com o ORM **Prisma**. O objetivo principal é demonstrar como integrar essas tecnologias para criar uma base sólida e eficiente para aplicações back-end, facilitando o desenvolvimento, manutenção e escalabilidade.
 
-## About
+## Sobre
 
 Essa POC é um treinamento completo, até o momento, sobre meu conhecimento de TypeScript e Prisma.
 
